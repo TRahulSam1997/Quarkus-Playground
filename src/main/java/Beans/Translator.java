@@ -3,6 +3,7 @@ package Beans;
 import org.eclipse.microprofile.metrics.annotation.Counted;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 
 class Dictionary {
@@ -13,10 +14,13 @@ class Dictionary {
 public class Translator {
 
     @Inject
-    Dictionary dictionary;
+    Instance<Dictionary> dictionaries;
 
     @Counted
     String translate(String sentence) {
+        for (Dictionary dict : dictionaries) {
+            //
+        }
 
         return "";
     }
