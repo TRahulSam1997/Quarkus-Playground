@@ -6,12 +6,28 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Instance;
 import javax.inject.Inject;
 
-class Dictionary {
+class LocalizationService {
 
 }
 
 @ApplicationScoped
 public class Translator {
+
+    private final TranslatorHelper helper;
+
+    public Translator(TranslatorHelper helper) {
+        this.helper = helper;
+    }
+
+    public Translator(TranslatorHelper helper, Instance<Dictionary> dictionaries) {
+        this.helper = helper;
+        this.dictionaries = dictionaries;
+    }
+
+    @Inject
+    void setDeps(Dictionary dictionary, LocalizationService locService) {
+        //
+    }
 
     @Inject
     Instance<Dictionary> dictionaries;
