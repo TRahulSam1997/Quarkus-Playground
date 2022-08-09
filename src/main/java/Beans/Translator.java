@@ -32,11 +32,17 @@ public class Translator {
     @Inject
     Instance<Dictionary> dictionaries;
 
-    @Counted
+//    @Counted
+//    String translate(String sentence) {
+//        for (Dictionary dict : dictionaries) {
+//            //
+//        }
+//
+//        return "";
+//    }
+
     String translate(String sentence) {
-        for (Dictionary dict : dictionaries) {
-            //
-        }
+        //
 
         return "";
     }
